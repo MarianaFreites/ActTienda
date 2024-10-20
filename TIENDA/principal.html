@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="eS">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Libreria</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/skeleton.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+
+  <style>
+    body {
+            /* Imagen de fondo */
+            background-image: url(img/Fondo\ Libreria.JPG);
+            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+            background-position: top center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            height: 100vh; /* Asegura que el fondo cubra todo el alto de la ventana */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+  </style>
+  
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="grid grid-cols-3 gap-4 pb-8 pt-8 pr-10 pl-10">
+        <div>
+          <img src="img/Redes Libreria .PNG" id="logo" class="w-40 h-18 ml-8" />
+        </div>
+        <div>
+          <img src="img/LogoLibreria.PNG" id="logo" class="w-48 h-32 mx-40 mr-20 "/>
+        </div>
+        <div class="three columns u-pull-right bg-right-top">
+          <ul>
+            <li class="submenu">
+              <img src="img/cart.png" class="ml-auto" alt="Carrito de Compras" onclick="toggleCarrito()">
+
+              <div id="carritoMenu" class="bg-white w-50 ml-auto">
+                <h2>Carrito</h2>
+                <div id="carrito"></div>
+                <p>Total: $<span id="total">0</span></p>
+              </div>
+              <div id="carrito">
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <h2 class="text-5xl text-center mt-10">Libros en stock</h2>
+
+  <div class="grid grid-cols-3 gap-4 pb-8 pt-8 pr-10 pl-10 ml-8 mt-4 mr-8">
+    <div class="bg-gray-300 max-w-sm h-65 rounded overflow-hidden shadow-lg">
+      <img src="https://imagessl9.casadellibro.com/a/l/t7/49/9788418798849.jpg" class="imagen-curso w-full" />
+      <div class="info-card">
+        <h4>Tres Meses</h4>
+        <p>Joana Marcus</p>
+        <p class="precio pb-5 line-through">$19.600</p> <p>$11.500</p>
+        <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full"
+          onclick="agregarAlCarrito('Tres Meses, Joana Marcus', 11500)">
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gray-300 max-w-sm h-65 rounded overflow-hidden shadow-lg">
+      <img src="https://images.macmillan.com/folio-assets/macmillan_us_frontbookcovers_1000H/9781250007209.jpg"
+        class="imagen-curso  imagen-curso w-full" />
+      <div class="info-card">
+        <h4>Cinder</h4>
+        <p>Marissa Meyer</p>
+        <p class="precio pb-5 line-through">$51.013</p> <p>$25.507</p>
+        <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full"
+          onclick="agregarAlCarrito('Cinder, Marissa Meyer', 25507)">
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gray-300 max-w-sm h-65 rounded overflow-hidden shadow-lg">
+      <img
+        src="https://ishopmx.vtexassets.com/arquivos/ids/184674-800-auto?v=637921709351900000&width=800&height=auto&aspect=true"
+        class="imagen-curso imagen-curso w-full" />
+      <div class="info-card">
+        <h4>Cuando No Queden Mas Estrellas Que Contar</h4>
+        <p>Maria Martinez</p>
+        <p class="precio pb-5 line-through">$25.000</p> <p>$19.300</p>
+        <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full"
+          onclick="agregarAlCarrito('Cuando No Queden Mas Estrellas Que Contar, Maria Martinez', 19300)">
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gray-300 max-w-sm h-65 rounded overflow-hidden shadow-lg">
+      <img src="https://tse3.mm.bing.net/th?id=OIP.fyJNgIPENNp40R-BACUnOAHaLS&pid=Api&P=0&h=180"
+        class="imagen-curso imagen-curso w-full" />
+      <div class="info-card">
+        <h4>Nosotros en la Luna</h4>
+        <p>Alice Kellen</p>
+        <p class="precio pb-5 line-through">$32.839</p> <p>$23.500</p>
+        <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full"
+          onclick="agregarAlCarrito('Nosotros en La Luna, Alice Kellen', 23500)">
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gray-300 max-w-sm h-65 rounded overflow-hidden shadow-lg">
+      <img src="https://tse3.mm.bing.net/th?id=OIP.tgN5o-T5wtBRpMCKF7pawQHaKI&pid=Api&P=0&h=180"
+        class="imagen-curso imagen-curso w-full" />
+      <div class="info-card">
+        <h4>Desconexion</h4>
+        <p>Neal Shusterman</p>
+        <p class="precio pb-5 line-through">$101.899</p> <p>$65.000</p>
+        <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full"
+          onclick="agregarAlCarrito('Desconexion, Neal Shusterman', 65000)">
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gray-300 max-w-sm h-65 rounded overflow-hidden shadow-lg">
+      <img src="https://www.letrasalataza.com/imagenes/9788408/978840825881.GIF"
+        class="imagen-curso imagen-curso w-full" />
+      <div class="info-card">
+        <h4>Otra Vez Tu</h4>
+        <p>Alice Kellen</p>
+        <p class="precio pb-5 line-through">$25.935</p> <p>$20.000</p>
+        <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full"
+          onclick="agregarAlCarrito('Otra Vez Tu, Alice Kellen', 20000)">
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container mx-auto text-center">
+      <p class="text-sm">&copy; 2024 Nombre Libreria - Cordoba, Argentina.</p>
+    </div>
+  </footer>
+
+  <script src="js/carrito.js"></script>
+
+</body>
+
+</html>
